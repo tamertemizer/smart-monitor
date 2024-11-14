@@ -9,8 +9,9 @@ import MainScreen from './MainScreen.js'
 import PatientHeader from './PatientHeader.js'
 import VitalTrends from './VitalTrends.js';
 import CardiacView from './CardiacView.js';
-
-const PatientMonitor = () => { 
+import {vitalSignsEcgData}  from './data/vitalSignsEcgData.js';
+const PatientMonitor = () => {
+  let ecgIndex = 0;
   const [vitals, setVitals] = useState({
     hr: 72,
     spo2: 95,
@@ -39,24 +40,23 @@ const PatientMonitor = () => {
 
   // Generate ECG-like data
   const generateECGData = (length) => {
+    const rand = Math.random() - 0.5;
     return Array.from({ length }, (_, i) => ({
       time: i,
-      value: 
-        Math.sin(i * 0.4) * 20 + // Base sine wave
-        (i % 25 === 0 ? 50 : 0) + // QRS spike
-        (Math.random() - 0.5) * 5 // Noise
+      value: vitalSignsEcgData.ecgHeartRateValues[parseInt((i + rand * 20) % 5000)] * (200 + rand / 2) - (800) 
+        // Noise
     }));
   };
 
   // State for ECG data
   const [ecgData, setEcgData] = useState({
-    I: generateECGData(100),
-    II: generateECGData(100),
-    III: generateECGData(100),
-    V1: generateECGData(100),
-    aVR: generateECGData(100),
-    aVL: generateECGData(100),
-    aVF: generateECGData(100),
+    I: generateECGData(5000),
+    II: generateECGData(5000),
+    III: generateECGData(5000),
+    V1: generateECGData(5000),
+    aVR: generateECGData(5000),
+    aVL: generateECGData(5000),
+    aVF: generateECGData(5000),
   });
   
   useEffect(() => {
@@ -67,18 +67,19 @@ const PatientMonitor = () => {
         hr: (60 + Math.random()).toFixed(0),
         spo2: (97 + Math.random()).toFixed(0),
       }));
+      
 
       // Update ECG data
       setEcgData({
-        I: generateECGData(100),
-        II: generateECGData(100),
-        III: generateECGData(100),
-        V1: generateECGData(100),
-        aVR: generateECGData(100),
-        aVL: generateECGData(100),
-        aVF: generateECGData(100),
+        I: generateECGData(5000),
+        II: generateECGData(5000),
+        III: generateECGData(5000),
+        V1: generateECGData(5000),
+        aVR: generateECGData(5000),
+        aVL: generateECGData(5000),
+        aVF: generateECGData(5000),
       });
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);

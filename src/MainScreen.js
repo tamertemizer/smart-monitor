@@ -8,8 +8,8 @@ import {
 import { Heart, Droplet, Wind, Activity, BarChart2, Settings } from 'lucide-react';
 import VitalDisplay from './VitalDisplay.js'
 import Paper from '@mui/material/Paper';
-import Waveform from './Waveform.js';
 import TrendWaveform from './TrendWaveform.js';
+import Waveform from './Waveform.js';
 
 const MainScreen = ({vitals, ecgData, setScreen}) => {
 

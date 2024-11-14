@@ -1,0 +1,461 @@
+/* Example Wrappers */
+.ExampleWrapperIFrame {
+    height: 100vh;
+}
+
+.ExampleWrapperIFrame .ChartWrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.ExampleWrapperIFrame .ChartWrapper img {
+    display: block;
+}
+
+.ChartWrapper {
+    overflow: hidden;
+    position: relative;
+    touch-action: none;
+    aspect-ratio: 16 / 11;
+}
+
+.ChartWrapper img {
+    display: block;
+}
+
+.FullHeightChartWrapper {
+    overflow: hidden;
+    position: relative;
+    touch-action: none;
+    aspect-ratio: 16 / 11;
+    flex: auto;
+}
+
+.ExampleWrapperCompicated {
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    margin: 0 auto;
+}
+
+.ExampleWrapperCompicated .ExampleWrapperCompicatedMain {
+    grid-column: 1 / 33;
+}
+
+.ExampleWrapperCompicated .ExampleWrapperCompicatedSub {
+    grid-column: 35 / -1;
+}
+
+@media (max-width: 37.5em) {
+    .ExampleWrapperCompicated {
+        max-width: 250px;
+    }
+}
+
+.ExampleWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.ExampleWrapper .Example {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+
+.ExampleWrapper .ExampleDescription {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+}
+
+.FormControl {
+    margin: 8px;
+    margin-left: 0;
+    min-width: 142px;
+}
+
+.AlignRight {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.Notification {
+    margin-bottom: 16px;
+}
+
+/* Examples Root */
+@media (max-width: 91.25em) {
+    .ExamplesRoot {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.ExamplesRoot .SciChartLogo {
+    text-align: right;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 60em) {
+    .ExamplesRoot .SciChartLogo {
+        display: none;
+    }
+}
+
+.ExamplesRoot .Body {
+    display: flex;
+}
+
+@media (max-width: 60em) {
+    .ExamplesRoot .Body {
+        display: block;
+    }
+}
+
+.ExamplesRoot .ColMain {
+    flex-basis: 240px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    overflow-x: auto;
+}
+
+.ExamplesRoot .ColDescription {
+    flex-basis: 360px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: 24px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 60em) {
+    .ExamplesRoot .ColDescription {
+        padding-left: 0;
+    }
+}
+
+.ExamplesRoot .ExampleRootDescription {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ExamplesRoot .ExampleRootDescription .ExampleRootDescriptionLink {
+    color: #39B5DB !important;
+}
+
+.ExamplesRoot .ExampleRootDescription .ExampleRootDescriptionLink:hover {
+    color: #44c8f1 !important;
+}
+
+@media (max-width: 91.25em) {
+    .ExamplesRoot .ExampleRootDescription {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+}
+
+.ExamplesRoot .ExampleRootDescription h5 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+@media (max-width: 91.25em) {
+    .ExamplesRoot .ExampleRootDescription h5 {
+        margin-bottom: 20px;
+    }
+}
+
+.ExamplesRoot .ExampleRootDescription .ExampleDescriptionText {
+    font-size: 1rem;
+    color: #3b5164;
+    line-height: 30px;
+    width: 75%;
+}
+
+@media (max-width: 91.25em) {
+    .ExamplesRoot .ExampleRootDescription .ExampleDescriptionText {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+.ExamplesRoot .Title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.ExamplesRoot .Subtitle {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 30px;
+}
+
+.ExamplesRoot .Subtitle a {
+    color: #39B5DB;
+}
+
+.ExamplesRoot .Subtitle a:hover {
+    color: #44c8f1;
+}
+
+.ExamplesRoot .TextGreen {
+    color: #5cb85c;
+}
+
+/* Vital Signs Monitor */
+.ChartContainer {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 37.5em) {
+    .ChartContainer {
+        flex-direction: column;
+    }
+}
+
+.VitalSigns {
+    width: 100%;
+    max-width: 90vw;
+}
+
+.InfoBoxContainer {
+    flex-basis: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 90vw;
+}
+
+.InfoBox {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-left: 1px solid #364ba0;
+    padding: 6px;
+    height: 25%;
+    width: 100%;
+    line-height: 1;
+    background-color: black;
+    border-bottom: 1px solid #364ba0;
+}
+
+.IbRow1 {
+    flex-grow: 1;
+    display: flex;
+}
+
+.IbRow1Col1 {
+    flex-grow: 1;
+    font-size: min(4vw, 32px);
+}
+
+.IbRow1Col2 {
+    text-align: right;
+    margin-top: 4px;
+    font-size: min(3vw, 12px);
+}
+
+.IbRow2 {
+    display: flex;
+    align-items: flex-end;
+}
+
+.IbRow2Col1 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: min(3vw, 14px);
+}
+
+.IbRow2Col1 img {
+    width: 45px;
+}
+
+.IbRow2Col2 {
+    display: flex;
+    flex-direction: column;
+    font-size: min(5vw, 44px);
+    text-align: right;
+}
+
+/* Buttons */
+.ButtonsWrapper {
+    display: flex;
+    flex: none;
+    margin-top: 10px;
+}
+
+.ButtonsWrapper button {
+    color: #5cb85c;
+    border: 1px #5cb85c solid;
+    text-align: center;
+}
+
+.ButtonsWrapper button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.ButtonsWrapper .GitHubLink {
+    border: 1px rgb(42, 99, 151) solid;
+    border-radius: 4px;
+    background-color: #f7f8f8;
+    color: rgb(42, 99, 151);
+    text-decoration: none;
+}
+
+.ButtonsWrapper .GitHubLink a {
+    color: rgb(42, 99, 151);
+}
+
+.ButtonsWrapper .ButtonsText {
+    margin-left: 10px;
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+@media (max-width: 37.5em) {
+    .ButtonsWrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ButtonsWrapper button:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Select */
+.SelectWrapper {
+    display: flex;
+    margin-top: 10px;
+}
+
+@media (max-width: 60em) {
+    .SelectWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .SelectWrapper {
+        align-items: stretch;
+    }
+}
+
+.InputSelectWrapper {
+    display: flex;
+    align-items: center;
+    color: #5cb85c;
+    border: 1px #5cb85c solid;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.InputSelectWrapper label {
+    margin: 0 auto;
+}
+
+.InputSelectWrapper select {
+    background-color: transparent !important;
+    outline: none;
+    border: none;
+    color: #5cb85c;
+    border-bottom: 1px #5cb85c solid;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    text-align: center;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(92,184,92)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: -2px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+.InputSelectWrapper:not(:last-child) {
+    margin-right: 10px;
+}
+
+@media (max-width: 60em) {
+    .InputSelectWrapper:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animation */
+.Animation {
+    transition: all 0.2s;
+    animation-name: up;
+    animation-delay: 0.9s;
+    animation-duration: 1.2s;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Lidar */
+.Lidar {
+    min-height: 500px;
+}
+
+@media (max-width: 91.25em) {
+    .Lidar {
+        min-height: 300px;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 60em) {
+    .Lidar {
+        height: 60vw;
+    }
+}
+
+/* Common */
+.PurpleButton {
+    background: linear-gradient(90deg, rgb(42, 99, 151), rgb(113, 55, 149), rgb(160, 36, 142));
+    border-radius: 14px;
+    margin: 10px;
+}
+
+.PurpleButton span {
+    font-weight: bold;
+    padding: 6px 15px;
+    color: white !important;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.PurpleButton:hover {
+    background-size: 200% 100%;
+    background-position: 0 100%;
+}
