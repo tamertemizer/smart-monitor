@@ -226,7 +226,8 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
               width: 'auto'
             }}>
               <Typography variant="subtitle1" component="h1">Sinus Rhythm</Typography>
-              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected - Click to expand</Typography>
+              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected</Typography>
+              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">Click to expand</Typography>
             </Box>
             <Box sx={{
               display: 'flex',
@@ -266,12 +267,11 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
             </Box>
             <Box sx={{
               position: 'absolute',
-              left: '50%',
+              left: {xs:'80%', sm:'50%'},
               transform: 'translateX(-50%)',
               width: 'auto'
             }}>
-              <Typography variant="subtitle1" component="h1">Normal Ventilation - Open Airway</Typography>
-              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected - Click to expand</Typography>
+              <Typography variant="subtitle1" component="h1">Hyperventilation</Typography>
             </Box>
           </Box>
           <Box sx={{ position: 'relative', margin: '10px 10px 0 10px', display:'flex', flexDirection:{ xs: 'column', sm: 'column', lg: 'row' }, justifyContent:'space-around', spacing:'4', gap: 1 }}>
@@ -315,8 +315,8 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       <Paper elevation={1} sx={{ p: 2, width: '100%' }}>
         <Grid container spacing={2}>
         {vitalsData.map((vital, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-            <Box sx={{ p: 2, height: '100%' }}>
+          <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+            <Box sx={{ p: 2, height: '100%', display:"flex", justifyContent:"center" }}>
               <VitalDisplay {...vital} />
             </Box>
           </Grid>

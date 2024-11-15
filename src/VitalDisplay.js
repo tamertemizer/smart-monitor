@@ -4,7 +4,7 @@ import {
     Typography
 } from '@mui/material';
 import Paper from '@mui/material/Paper';
-import { TrendingUp, AlertCircle } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertCircle } from 'lucide-react';
 import { keyframes } from '@mui/system';
 
 // Define the blinking animation
@@ -21,7 +21,8 @@ const VitalDisplay = ({
   secondaryLabel, 
   color, 
   icon: Icon, 
-  showTrend, 
+  showTrend,
+  showTrendDown,
   alert,
   state 
 }) => {
@@ -54,8 +55,8 @@ const VitalDisplay = ({
     <Paper 
       elevation={3} 
       sx={{ 
-        height: '150px',
-        width: '240px',
+        height: {xs:'150px', md:'110px', lg:'150px', xl:'150px'},
+        width: {xs:'250px', md:'160px', lg:'175px', xl:'210px'},
         justifyContent: 'center',
         display: 'flex',
         position: 'relative',
@@ -77,7 +78,7 @@ const VitalDisplay = ({
               color: color,
               textAlign: 'left',
               fontWeight: 'bold',
-              fontSize: '24px',
+              fontSize: {xs:'22px', md:'20px', lg:'20px', xl:'22px'},
               display: 'flex',
               alignItems: 'center',
               gap: '8px'
@@ -94,7 +95,7 @@ const VitalDisplay = ({
             color: color,
             textAlign: 'center',
             fontWeight: 'bold',
-            fontSize: '40px',
+            fontSize: {xs:'40px', md:'32px', lg:'36px', xl:'40px' },
           }}
         >
           {value}
@@ -105,7 +106,7 @@ const VitalDisplay = ({
             sx={{ 
               color: color,
               textAlign: 'center',
-              fontSize: '20px',
+              fontSize: {xs:'16px', md:'16px', lg:'16px'},
               opacity: 0.8
             }}
           >
@@ -115,6 +116,11 @@ const VitalDisplay = ({
         {showTrend && (
           <Box sx={{ position: 'absolute', right: 8, bottom: 8 }}>
             <TrendingUp color={color} size={20} />
+          </Box>
+        )}
+        {showTrendDown && (
+          <Box sx={{ position: 'absolute', right: 8, bottom: 8 }}>
+            <TrendingDown color={color} size={20} />
           </Box>
         )}
       </Box>

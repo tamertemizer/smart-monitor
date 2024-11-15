@@ -5,12 +5,12 @@ import {
   Stack
 } from '@mui/material';
 
-import MainScreen from './MainScreen.js'
-import PatientHeader from './PatientHeader.js'
+import MainScreen from './MainScreen-Sepsis.js'
+import PatientHeader from './PatientHeader-Sepsis.js'
 import VitalTrends from './VitalTrends.js';
 import CardiacView from './CardiacView.js';
 import {vitalSignsEcgData}  from './data/vitalSignsEcgData.js';
-const PatientMonitor = () => {
+const PatientMonitorSepsis = () => {
   let ecgIndex = 0;
   const [vitals, setVitals] = useState({
     hr: 120,
@@ -42,8 +42,10 @@ const PatientMonitor = () => {
     name: "Aysel Yılmaz",
     id: "P123457",
     age: 70,
+    bed:'Kritik-05',
     disease: "Sepsis",
-    condition: "Unstable - Possible septic shock"
+    condition: "Unstable",
+    secondline: "Possible septic shock"
   });
 
 
@@ -125,7 +127,7 @@ const PatientMonitor = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("overview")}
+            onClick={()=>{}}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
@@ -138,7 +140,7 @@ const PatientMonitor = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("medication")}
+            onClick={()=>{}}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
@@ -151,7 +153,7 @@ const PatientMonitor = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("lab")}
+            onClick={()=>{}}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
@@ -164,7 +166,7 @@ const PatientMonitor = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("notes")}
+            onClick={()=>{}}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
@@ -193,4 +195,4 @@ const PatientMonitor = () => {
   );
 };
 
-export default PatientMonitor;
+export default PatientMonitorSepsis;

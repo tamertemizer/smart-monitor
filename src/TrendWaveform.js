@@ -5,10 +5,10 @@ import {
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 // ECG Waveform Component
-const TrendWaveform = ({ data, min, max, color, height="100px", timeResolution="minute"}) => (
+const TrendWaveform = ({ data, min, max, color, height="100px", width='19vw', timeResolution="minute"}) => (
   <Box sx={{ 
     height: {height},
-    width: '19vw',
+    width: {...width},
     bgcolor: 'background.paper',
     p: 2,
     borderRadius: 1

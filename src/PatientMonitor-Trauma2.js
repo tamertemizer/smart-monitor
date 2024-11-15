@@ -2,48 +2,49 @@ import React, {useState, useEffect} from 'react';
 import { 
   Box,
   Button, 
-  Stack
+  Stack,
+  Paper,
+  Typography
 } from '@mui/material';
 
-import MainScreen from './MainScreen.js'
+import MainScreen from './MainScreen-Trauma2.js'
 import PatientHeader from './PatientHeader.js'
 import VitalTrends from './VitalTrends.js';
 import CardiacView from './CardiacView.js';
 import {vitalSignsEcgData}  from './data/vitalSignsEcgData.js';
-const PatientMonitor = () => {
+import PatientInfoHeader from './PatientInfoHeader.js';
+const PatientMonitorTrauma2 = () => {
   let ecgIndex = 0;
   const [vitals, setVitals] = useState({
-    hr: 120,
-    spo2: 88,
+    hr: 130,
+    spo2: 94,
     base: -8,
-    bp: "70/40",
-    map: 50,
+    bp: "90/55",
+    map: 67,
     resp: 32,
-    shockIndex: 1.7,
+    shockIndex: 1.4,
     co: 4.2,
     hemoglobin: 10,
-    gcs: 13,
+    gcs: 14,
     ef: 35,
     fluid: '+250',
-    urine: '110',
+    urine: '10',
     weight: 82.5,
     weightChange: '+1.5',
     bnp: 850,
-    lactate: 4.0,
-    cvp: 10,
-    mews: 9,
-    creatine: 1.4,
-    bilirubin: 4.0,
-    temperature: 35.4, 
-    sofa: 14
+    lactate: 2.1,
+    jvp: 10,
+    mews: 8
   });
 
   const [patientState, setPatientState] = useState({
-    name: "Aysel Yılmaz",
-    id: "P123457",
-    age: 70,
-    disease: "Sepsis",
-    condition: "Unstable - Possible septic shock"
+    name: "Ahmet Yılmaz",
+    id: "P123456",
+    age: 18,
+    bed:'Kritik-04',
+    disease: "Trauma",
+    condition: "Unstable",
+    secondline: "Possible Stage 3 Hemorogic Shock"
   });
 
 
@@ -73,8 +74,8 @@ const PatientMonitor = () => {
       // Update vitals
       setVitals(prev => ({
         ...prev,
-        hr: (120 + Math.random()).toFixed(0),
-        spo2: (88 + Math.random()).toFixed(0),
+        hr: (130 + Math.random()).toFixed(0),
+        spo2: (94 + Math.random()).toFixed(0),
       }));
       
 
@@ -100,6 +101,7 @@ const PatientMonitor = () => {
       <Box>
         {/* Patient Info Header */}
         <PatientHeader patientState={patientState}></PatientHeader>
+        <PatientInfoHeader></PatientInfoHeader>
         {screen === "main" && <MainScreen vitals={vitals} ecgData={ecgData} setScreen={setScreen}></MainScreen>}
         {screen === "trends" && <VitalTrends></VitalTrends>}
         {screen === "cardiac" && <CardiacView ecgData={ecgData}></CardiacView>}
@@ -193,4 +195,4 @@ const PatientMonitor = () => {
   );
 };
 
-export default PatientMonitor;
+export default PatientMonitorTrauma2;

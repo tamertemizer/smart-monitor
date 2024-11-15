@@ -5,45 +5,42 @@ import {
   Stack
 } from '@mui/material';
 
-import MainScreen from './MainScreen.js'
+import MainScreen from './MainScreen-TraumaYatis.js'
 import PatientHeader from './PatientHeader.js'
 import VitalTrends from './VitalTrends.js';
 import CardiacView from './CardiacView.js';
 import {vitalSignsEcgData}  from './data/vitalSignsEcgData.js';
-const PatientMonitor = () => {
+const PatientMonitorTraumaYatis = () => {
   let ecgIndex = 0;
   const [vitals, setVitals] = useState({
-    hr: 120,
-    spo2: 88,
-    base: -8,
-    bp: "70/40",
-    map: 50,
-    resp: 32,
-    shockIndex: 1.7,
+    hr: 80,
+    spo2: 95,
+    base: -2,
+    bp: "120/80",
+    map: 93,
+    resp: 20,
+    shockIndex: 0.6,
     co: 4.2,
-    hemoglobin: 10,
-    gcs: 13,
+    hemoglobin: 11,
+    gcs: 15,
     ef: 35,
     fluid: '+250',
-    urine: '110',
+    urine: '30',
     weight: 82.5,
     weightChange: '+1.5',
     bnp: 850,
-    lactate: 4.0,
-    cvp: 10,
-    mews: 9,
-    creatine: 1.4,
-    bilirubin: 4.0,
-    temperature: 35.4, 
-    sofa: 14
+    lactate: 2.1,
+    jvp: 10,
+    mews: 2
   });
 
   const [patientState, setPatientState] = useState({
-    name: "Aysel Yılmaz",
-    id: "P123457",
-    age: 70,
-    disease: "Sepsis",
-    condition: "Unstable - Possible septic shock"
+    name: "Ahmet Yılmaz",
+    id: "P123456",
+    age: 18,
+    bed:'Kritik-04',
+    disease: "Trauma",
+    condition: "Stable"
   });
 
 
@@ -73,8 +70,8 @@ const PatientMonitor = () => {
       // Update vitals
       setVitals(prev => ({
         ...prev,
-        hr: (120 + Math.random()).toFixed(0),
-        spo2: (88 + Math.random()).toFixed(0),
+        hr: (80 + Math.random()).toFixed(0),
+        spo2: (97 + Math.random()).toFixed(0),
       }));
       
 
@@ -193,4 +190,4 @@ const PatientMonitor = () => {
   );
 };
 
-export default PatientMonitor;
+export default PatientMonitorTraumaYatis;

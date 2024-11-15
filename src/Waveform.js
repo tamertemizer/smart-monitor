@@ -5,10 +5,11 @@ import {
 import { LineChart, Line, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 // ECG Waveform Component
-const Waveform = ({ data, color, height="100px", width="100%" }) => (
+const Waveform = ({ data, color, height="100px", width="100%" }) => {
+  return(
     <Box sx={{ 
       height: {height}, 
-      width: {width},
+      width: {...width},
       border: '1px solid #333',
       bgcolor: 'background.default'}}>
       <ResponsiveContainer width="100%" height="100%">
@@ -23,6 +24,6 @@ const Waveform = ({ data, color, height="100px", width="100%" }) => (
         </LineChart>
       </ResponsiveContainer>
     </Box>
-  );
+  )};
 
 export default Waveform;

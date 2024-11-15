@@ -36,7 +36,7 @@ const PatientHeader = ({patientState}) => {
     return (
         <>
           <Paper elevation={1} sx={{ mb: 2, p: 2 }}>
-            <Box justifyContent="space-between" sx={{display:"flex", position:"relative", flexDirection:{xs:"column",sm:"row"}, gap:"20px"}} alignItems="center">
+            <Box justifyContent="space-between" sx={{display:"flex", flexDirection:{xs:"column",sm:"row"}, gap:"20px"}} alignItems="center">
               <Box>
                 <Typography variant="h5" component="h1">
                   {patientState.name}
@@ -45,10 +45,7 @@ const PatientHeader = ({patientState}) => {
                   ID: {patientState.id} | Age: {patientState.age}
                 </Typography>
               </Box>
-              <Box sx={{position:{xs:"relative", sm:"absolute"},
-                left: {xs:"auto", sm:"50%"},
-                top: {xs:"auto", sm:"50%"},
-                transform: {xs:"", sm:'translate(-50%, -50%)'},}}>
+              <Box>
                 <Typography variant="subtitle2" component="h1">
                   {patientState.disease}
                 </Typography>
@@ -86,40 +83,11 @@ const PatientHeader = ({patientState}) => {
                <AlertCircle size={16} />  {patientState.secondline}
               </Typography>
               <Typography variant="body1" gutterBottom>
-                Evaluated as Stage 3 Hemorogic Shock according to ATLS 10 guidelines.
+                Evaluated as Septic Shock according to SIRS and SOFA score.
               </Typography>
-              <List>
-                <ListItem>
-                  <Typography variant="body2">
-                    Shock index {'>'} 0.8
-                  </Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="body2">
-                    Heart Rate {'>'} 120 bpm and {'<'} 140 bpm
-                  </Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="body2">
-                    Systolic BP dropped significantly in the last hour
-                  </Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="body2">
-                    Urine output {'>'} 5 ml/h and {'<'} 15 ml/h
-                  </Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="body2">
-                    Respiratory rate {'>'} 30 / min and {'<'} 40 / min
-                  </Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="body2">
-                    Base deficit is between -6 and -10
-                  </Typography>
-                </ListItem>
-              </List>
+              <Typography variant="body2">
+                Please evaluate in terms of fluid and vasopressor requirements
+              </Typography>
             </Box>
           </Modal>
         </>

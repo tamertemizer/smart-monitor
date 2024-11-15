@@ -22,9 +22,6 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       value: vitals.hr,
       unit: "bpm",
       color: "#00ff00",
-      state: "warning",
-      alert: true,
-      showTrend : true,
       icon: Heart
     },
     {
@@ -34,8 +31,6 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       secondaryValue: `${vitals.map} mmHg`,
       secondaryLabel: "MAP",
       color: "#ffff00",
-      state: "critical",
-      showTrendDown : true,
       icon: Activity
     },
     {
@@ -43,64 +38,38 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       value: vitals.resp,
       unit: "/min",
       color: "#00ffff",
-      state: "critical",
-      alert: true,
-      showTrend : true,
       icon: Wind
-    },
-    {
-      label: "Temperature",
-      value: vitals.temperature,
-      unit: "C",
-      color: "#00ff00",
-      state: "critical",
-      showTrendDown : true,
-      icon: Activity
     },
     // Bu bos ama onemli 
     {
       label: "Urine Output",
       value: vitals.urine,
-      unit: "mL/24h",
+      unit: "mL/h",
       color: "#ff00ff",
       icon: Droplet,
-      state: "warning",
-      showTrendDown: true,
+      showTrend: true,
       alert: true
     },
     {
-      label: "Lactate",
-      value: vitals.lactate,
-      unit: "mmol/l",
+      label: "Base Deficit",
+      value: vitals.base,
+      unit: "",
       color: "#ff00ff",
-      state: "warning",
-      showTrend : true,
       icon: Wind
     },
     {
-      label: "Creatine",
-      value: vitals.creatine,
+      label: "Hemoglobin",
+      value: vitals.hemoglobin,
       unit: "g/dl",
       color: "#ff00ff",
-      showTrend: true,
-      secondaryValue: "-1 g/dl",
       icon: Droplet,
       alert: true
-    },
-    {
-      label: "Bilirubin",
-      value: vitals.bilirubin,
-      unit: "mg/dl",
-      color: "#ff00ff",
-      showTrend: true,
-      icon: Settings
     },
     {
       label: "GCS",
       value: vitals.gcs,
       unit: "/15",
       color: "#ffeeee",
-      showTrendDown: true,
       icon: Settings
     },
     {
@@ -108,8 +77,6 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       value: vitals.shockIndex,
       unit: "",
       color: "#ffeeee",
-      state: "critical",
-      showTrend : true,
       icon: Activity
     },
     {
@@ -119,19 +86,7 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       unit: "/ 14",
       icon: Activity,
       secondaryValue: '0-3',
-      state: "warning",
-      showTrend : true,
       secondaryLabel: "Normal Value"
-    },
-
-    {
-      label: "SOFA score",
-      value: vitals.sofa,
-      color: "#ffeeee",
-      unit: "",
-      icon: Activity,
-      state: "warning",
-      showTrend : true
     }
   ];
 
@@ -226,7 +181,8 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
               width: 'auto'
             }}>
               <Typography variant="subtitle1" component="h1">Sinus Rhythm</Typography>
-              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected - Click to expand</Typography>
+              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected</Typography>
+              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">Click to expand</Typography>
             </Box>
             <Box sx={{
               display: 'flex',
@@ -315,8 +271,8 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       <Paper elevation={1} sx={{ p: 2, width: '100%' }}>
         <Grid container spacing={2}>
         {vitalsData.map((vital, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-            <Box sx={{ p: 2, height: '100%' }}>
+          <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+            <Box sx={{ p: 2, height: '100%', display:"flex", justifyContent:"center" }}>
               <VitalDisplay {...vital} />
             </Box>
           </Grid>
