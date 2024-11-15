@@ -24,7 +24,7 @@ const PatientInfoHeader = ({patientState}) => {
 
     return (
         <>
-          <Paper sx={{margin:"10px 0 10px 0"}}>
+          <Paper sx={{margin:"10px 0 10px 0", boxShadow: '0 0 5px rgba(255, 152, 0, 0.5)'}}>
             <Box  sx={{padding:"10px 0 10px 0"}}>
               <Typography onClick={() => setModalState("open")}>Evaluate the need for massive transfusion!</Typography>
             </Box>

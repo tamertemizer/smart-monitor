@@ -107,9 +107,10 @@ const PatientMonitorTrauma2 = () => {
         {screen === "cardiac" && <CardiacView ecgData={ecgData}></CardiacView>}
         {/* Bottom Menu */}
         <Stack 
-          direction="row" 
+          direction={{xs:"column", sm:"row"}}
           spacing={0.5} 
           justifyContent="center"
+          alignItems="center"
           mt={2}
         >
           <Button 
@@ -120,59 +121,64 @@ const PatientMonitorTrauma2 = () => {
               color: 'black',
               '&:hover': {
                 bgcolor: '#c0c0c0',
-              }
+              },
+              width:{xs:"70%", sm:"auto"}
             }}
           >
             Main Screen
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("overview")}
+            onClick={()=>setScreen("main")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
               '&:hover': {
                 bgcolor: '#c0c0c0',
-              }
+              },
+              width:{xs:"70%", sm:"auto"}
             }}
           >
             Overview
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("medication")}
+            onClick={()=>setScreen("main")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
               '&:hover': {
                 bgcolor: '#c0c0c0',
-              }
+              },
+              width:{xs:"70%", sm:"auto"}
             }}
           >
             Medications
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("lab")}
+            onClick={()=>setScreen("main")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
               '&:hover': {
                 bgcolor: '#c0c0c0',
-              }
+              },
+              width:{xs:"70%", sm:"auto"}
             }}
           >
             Lab Results
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("notes")}
+            onClick={()=>setScreen("main")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
               '&:hover': {
                 bgcolor: '#c0c0c0',
-              }
+              },
+              width:{xs:"70%", sm:"auto"}
             }}
           >
             Notes
@@ -185,7 +191,8 @@ const PatientMonitorTrauma2 = () => {
               color: 'black',
               '&:hover': {
                 bgcolor: '#c0c0c0',
-              }
+              },
+              width:{xs:"70%", sm:"auto"}
             }}
           >
             Trends

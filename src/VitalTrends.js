@@ -105,60 +105,65 @@ const VitalTrends = () => {
       }}>
         {/* Controls */}
         <Box sx={{ 
-          display: 'flex', 
+          display: 'flex',
+          flexDirection: {xs:"column", sm:"row"},
           gap: 2, 
           mb: 3,
           alignItems: 'center',
           justifyContent: 'space-between'
         }}>
-            <Box sx={{ 
-          display: 'flex', 
-          gap: 2
-        }}>
-          <FormControl sx={{ minWidth: 200 }}>
-            <Select
-              value={selectedVital}
-              onChange={(e) => setSelectedVital(e.target.value)}
+          <Box sx={{ 
+            display: 'flex',
+            flexDirection: {xs:"column", sm:"row"},
+            gap: 2
+          }}>
+            <FormControl sx={{ minWidth: 200 }}>
+              <Select
+                value={selectedVital}
+                onChange={(e) => setSelectedVital(e.target.value)}
+                sx={{ bgcolor: 'background.paper' }}
+              >
+                {Object.entries(vitalOptions).map(([key, option]) => (
+                  <MenuItem key={key} value={key}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <ToggleButtonGroup
+              value={timeResolution}
+              exclusive
+              onChange={(e, newValue) => {
+                if (newValue !== null) setTimeResolution(newValue);
+              }}
               sx={{ bgcolor: 'background.paper' }}
             >
-              {Object.entries(vitalOptions).map(([key, option]) => (
-                <MenuItem key={key} value={key}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-
-          <ToggleButtonGroup
-            value={timeResolution}
-            exclusive
-            onChange={(e, newValue) => {
-              if (newValue !== null) setTimeResolution(newValue);
-            }}
-            sx={{ bgcolor: 'background.paper' }}
-          >
-            <ToggleButton value="minute">
-              Minute
-            </ToggleButton>
-            <ToggleButton value="hour">
-              Hour
-            </ToggleButton>
-            <ToggleButton value="day">
-              Day
-            </ToggleButton>
-          </ToggleButtonGroup>
+              <ToggleButton value="minute">
+                Minute
+              </ToggleButton>
+              <ToggleButton value="hour">
+                Hour
+              </ToggleButton>
+              <ToggleButton value="day">
+                Day
+              </ToggleButton>
+            </ToggleButtonGroup>
           </Box>
             {/* Current Value */}
-            <Box sx={{ textAlign: 'right' }}>
+          <Box sx={{ textAlign: 'right' }}>
             <Typography variant="h6">
                 Current: {trendData[trendData.length - 1]?.value.toFixed(1)} {vitalOptions[selectedVital].unit}
             </Typography>
-            </Box>
+          </Box>
         </Box>
 
         {/* Chart */}
         <Box sx={{ 
-          height: '50vh', 
+          height: '50vh',
+          position: "relative",
+          width: {xs:"110%", sm:"auto"},
+          left: {xs:"-60px", sm:"0px"},
           bgcolor: 'background.paper',
           p: 2,
           borderRadius: 1

@@ -5,7 +5,7 @@ import {
   Typography
 } from '@mui/material';
 
-import { Heart, Droplet, Wind, Activity, BarChart2, Settings } from 'lucide-react';
+import { Heart, Droplet, Wind, Activity, BarChart2, FlaskConical, Settings } from 'lucide-react';
 import VitalDisplay from './VitalDisplay.js'
 import Paper from '@mui/material/Paper';
 import TrendWaveform from './TrendWaveform.js';
@@ -67,7 +67,7 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       color: "#ff00ff",
       state: "warning",
       showTrend : true,
-      icon: Wind
+      icon: FlaskConical
     },
     {
       label: "Hemoglobin",
@@ -76,7 +76,7 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       color: "#ff00ff",
       showTrendDown: true,
       secondaryValue: "-1 g/dl",
-      icon: Droplet,
+      icon: FlaskConical,
       alert: true
     },
     {
@@ -85,7 +85,7 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       unit: "/15",
       color: "#ffeeee",
       showTrendDown: true,
-      icon: Settings
+      icon: BarChart2
     },
     {
       label: "Shock Index",
@@ -94,14 +94,14 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       color: "#ffeeee",
       state: "critical",
       showTrend : true,
-      icon: Activity
+      icon: BarChart2
     },
     {
       label: "MEWS",
       value: vitals.mews,
       color: "#ffeeee",
       unit: "/ 14",
-      icon: Activity,
+      icon: BarChart2,
       secondaryValue: '0-3',
       state: "warning",
       showTrend : true,
@@ -200,7 +200,6 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
               width: 'auto'
             }}>
               <Typography variant="subtitle1" component="h1">Sinus Rhythm</Typography>
-              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected</Typography>
               <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">Click to expand</Typography>
             </Box>
             <Box sx={{

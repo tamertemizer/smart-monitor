@@ -5,7 +5,7 @@ import {
   Typography
 } from '@mui/material';
 
-import { Heart, Droplet, Wind, Activity, BarChart2, Settings } from 'lucide-react';
+import { Heart, Droplet, Wind, Activity, BarChart2, FlaskConical, Settings } from 'lucide-react';
 import VitalDisplay from './VitalDisplay.js'
 import Paper from '@mui/material/Paper';
 import TrendWaveform from './TrendWaveform.js';
@@ -55,14 +55,14 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       value: vitals.base,
       unit: "",
       color: "#ff00ff",
-      icon: Wind
+      icon: FlaskConical
     },
     {
       label: "Hemoglobin",
       value: vitals.hemoglobin,
       unit: "g/dl",
       color: "#ff00ff",
-      icon: Droplet,
+      icon: FlaskConical,
       alert: true
     },
     {
@@ -70,21 +70,21 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       value: vitals.gcs,
       unit: "/15",
       color: "#ffeeee",
-      icon: Settings
+      icon: BarChart2
     },
     {
       label: "Shock Index",
       value: vitals.shockIndex,
       unit: "",
       color: "#ffeeee",
-      icon: Activity
+      icon: BarChart2
     },
     {
       label: "MEWS",
       value: vitals.mews,
       color: "#ffeeee",
       unit: "/ 14",
-      icon: Activity,
+      icon: BarChart2,
       secondaryValue: '0-3',
       secondaryLabel: "Normal Value"
     }
@@ -181,7 +181,6 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
               width: 'auto'
             }}>
               <Typography variant="subtitle1" component="h1">Sinus Rhythm</Typography>
-              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected</Typography>
               <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">Click to expand</Typography>
             </Box>
             <Box sx={{
@@ -222,12 +221,11 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
             </Box>
             <Box sx={{
               position: 'absolute',
-              left: '50%',
+              left: {xs:'80%', sm:'50%'},
               transform: 'translateX(-50%)',
-              width: 'auto'
+              width: {xs:"200px", sm:'auto'}
             }}>
-              <Typography variant="subtitle1" component="h1">Normal Ventilation - Open Airway</Typography>
-              <Typography variant="body2" fontSize="0.75rem" color="#EBEBE4" component="p">No issues detected - Click to expand</Typography>
+              <Typography variant="subtitle1" component="h1">Normal Ventilation</Typography>
             </Box>
           </Box>
           <Box sx={{ position: 'relative', margin: '10px 10px 0 10px', display:'flex', flexDirection:{ xs: 'column', sm: 'column', lg: 'row' }, justifyContent:'space-around', spacing:'4', gap: 1 }}>

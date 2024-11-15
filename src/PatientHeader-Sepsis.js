@@ -36,7 +36,7 @@ const PatientHeader = ({patientState}) => {
     return (
         <>
           <Paper elevation={1} sx={{ mb: 2, p: 2 }}>
-            <Box justifyContent="space-between" sx={{display:"flex", flexDirection:{xs:"column",sm:"row"}, gap:"20px"}} alignItems="center">
+            <Box justifyContent="space-between" sx={{display:"flex", position:"relative", flexDirection:{xs:"column",sm:"row"}, gap:"20px"}} alignItems="center">
               <Box>
                 <Typography variant="h5" component="h1">
                   {patientState.name}
@@ -45,7 +45,10 @@ const PatientHeader = ({patientState}) => {
                   ID: {patientState.id} | Age: {patientState.age}
                 </Typography>
               </Box>
-              <Box>
+              <Box sx={{position:{xs:"relative", sm:"absolute"},
+                left: {xs:"auto", sm:"50%"},
+                top: {xs:"auto", sm:"50%"},
+                transform: {xs:"", sm:'translate(-50%, -50%)'},}}>
                 <Typography variant="subtitle2" component="h1">
                   {patientState.disease}
                 </Typography>
