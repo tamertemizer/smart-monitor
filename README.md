@@ -5,3 +5,5 @@ Akilli hastabasi monitoru projemizin demo kodlarini icerir. Demo kodu oldugundan
 `npm install`
 
 `npm run start`
+
+Demo: https://smart-monitor-86c83cbd3ae1.herokuapp.com
