@@ -55,8 +55,8 @@ const VitalDisplay = ({
     <Paper 
       elevation={3} 
       sx={{ 
-        height: {xs:'150px', md:'110px', lg:'150px', xl:'150px'},
-        width: {xs:'250px', md:'160px', lg:'175px', xl:'210px'},
+        height: {xs:'140px', md:'110px', lg:'150px', xl:'150px'},
+        width: {xs:'160px', md:'160px', lg:'175px', xl:'210px'},
         justifyContent: 'center',
         display: 'flex',
         position: 'relative',
@@ -78,7 +78,7 @@ const VitalDisplay = ({
               color: color,
               textAlign: 'left',
               fontWeight: 'bold',
-              fontSize: {xs:'22px', md:'20px', lg:'20px', xl:'22px'},
+              fontSize: {xs:'16px', md:'20px', lg:'20px', xl:'22px'},
               display: 'flex',
               alignItems: 'center',
               gap: '8px'
@@ -95,7 +95,7 @@ const VitalDisplay = ({
             color: color,
             textAlign: 'center',
             fontWeight: 'bold',
-            fontSize: {xs:'40px', md:'32px', lg:'36px', xl:'40px' },
+            fontSize: {xs:'28px', md:'32px', lg:'36px', xl:'40px' },
           }}
         >
           {value}
@@ -106,7 +106,7 @@ const VitalDisplay = ({
             sx={{ 
               color: color,
               textAlign: 'center',
-              fontSize: {xs:'16px', md:'16px', lg:'16px'},
+              fontSize: {xs:'14px', md:'16px', lg:'16px'},
               opacity: 0.8
             }}
           >

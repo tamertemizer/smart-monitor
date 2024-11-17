@@ -49,7 +49,7 @@ const PatientHeader = ({patientState}) => {
                 left: {xs:"auto", sm:"50%"},
                 top: {xs:"auto", sm:"50%"},
                 transform: {xs:"", sm:'translate(-50%, -50%)'},}}>
-                <Typography variant="subtitle2" component="h1">
+                <Typography fontSize={18} variant="subtitle2" component="h1">
                   {patientState.disease}
                 </Typography>
                 <Typography 

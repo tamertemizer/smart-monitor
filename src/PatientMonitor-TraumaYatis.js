@@ -10,6 +10,9 @@ import PatientHeader from './PatientHeader.js'
 import VitalTrends from './VitalTrends.js';
 import CardiacView from './CardiacView.js';
 import {vitalSignsEcgData}  from './data/vitalSignsEcgData.js';
+import LabSepsis from './LabTrauma.js';
+import Notes from './Notes.js';
+import Medication from './Medication.js';
 const PatientMonitorTraumaYatis = () => {
   let ecgIndex = 0;
   const [vitals, setVitals] = useState({
@@ -100,6 +103,9 @@ const PatientMonitorTraumaYatis = () => {
         {screen === "main" && <MainScreen vitals={vitals} ecgData={ecgData} setScreen={setScreen}></MainScreen>}
         {screen === "trends" && <VitalTrends></VitalTrends>}
         {screen === "cardiac" && <CardiacView ecgData={ecgData}></CardiacView>}
+        {screen === "lab" && <LabSepsis></LabSepsis>}
+        {screen === "notes" && <Notes></Notes>}
+        {screen === "medication" && <Medication></Medication>}
         {/* Bottom Menu */}
         <Stack 
           direction={{xs:"column", sm:"row"}}
@@ -124,21 +130,7 @@ const PatientMonitorTraumaYatis = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("main")}
-            sx={{ 
-              bgcolor: '#d0d0d0', 
-              color: 'black',
-              '&:hover': {
-                bgcolor: '#c0c0c0',
-              },
-              width:{xs:"70%", sm:"auto"}
-            }}
-          >
-            Overview
-          </Button>
-          <Button 
-            variant="outlined"
-            onClick={()=>setScreen("main")}
+            onClick={()=>setScreen("medication")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
@@ -152,7 +144,7 @@ const PatientMonitorTraumaYatis = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("main")}
+            onClick={()=>setScreen("lab")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',
@@ -166,7 +158,7 @@ const PatientMonitorTraumaYatis = () => {
           </Button>
           <Button 
             variant="outlined"
-            onClick={()=>setScreen("main")}
+            onClick={()=>setScreen("notes")}
             sx={{ 
               bgcolor: '#d0d0d0', 
               color: 'black',

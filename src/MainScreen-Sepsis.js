@@ -53,7 +53,7 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       value: vitals.temperature,
       unit: "C",
       color: "#00ff00",
-      state: "critical",
+      state: "warning",
       showTrendDown : true,
       icon: Thermometer
     },
@@ -314,7 +314,7 @@ const MainScreen = ({vitals, ecgData, setScreen}) => {
       <Paper elevation={1} sx={{ p: 2, width: '100%' }}>
         <Grid container spacing={2}>
         {vitalsData.map((vital, index) => (
-          <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+          <Grid item xs={6} sm={6} md={6} lg={4} key={index}>
             <Box sx={{ p: 2, height: '100%', display:"flex", justifyContent:"center" }}>
               <VitalDisplay {...vital} />
             </Box>
